@@ -1,0 +1,17 @@
+export class User {
+    memberName: string;
+    email: string; 
+    password: string;
+    memberImage: String;
+    address: String;
+    memberID:String;
+
+    constructor(userData:any){
+        this.memberName=userData.memberName;
+        this.email=userData.email;
+        this.password=userData.password;
+        this.memberImage=userData.memberImage;
+        this.address=userData.address;
+        this.memberID=userData.memberID;
+    }
+}
