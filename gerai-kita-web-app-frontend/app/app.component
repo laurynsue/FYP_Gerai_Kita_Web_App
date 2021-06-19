@@ -1,0 +1,94 @@
+<ion-app>
+  <ion-menu side="start" content-id="main-content">
+    <ion-header>
+      <ion-toolbar translucent>
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+  
+      <ion-content>
+        <ion-list>
+          <ion-item>
+            <ion-icon name="home" slot="start"></ion-icon>
+            <ion-button color="light" expand="block" [routerLink]="['/home']">Home</ion-button>
+          </ion-item>
+  
+          <ion-item>
+            <ion-icon name="bag" slot="start"></ion-icon>
+            <ion-button color="light" expand="block" [routerLink]="['/products']">Products</ion-button>
+          </ion-item>
+  
+          <ion-item>
+            <ion-icon name="cart" slot="start"></ion-icon>
+            <ion-button color="light" expand="block" [routerLink]="['/cart']">Cart</ion-button>
+          </ion-item>
+  
+          <ion-item>
+            <ion-icon name="call" slot="start"></ion-icon>
+            <ion-button color="light" expand="block" [routerLink]="['/about-us']">About Us</ion-button>
+          </ion-item>
+
+          <ion-item *ngIf="!isLoggedIn">
+            <ion-icon name="log-in" slot="start"></ion-icon>
+            <ion-button color="light" expand="block" [routerLink]="['/login']">Login</ion-button>
+          </ion-item>
+  
+          <ion-item *ngIf="!isLoggedIn">
+            <ion-icon name="create" slot="start"></ion-icon>
+            <ion-button color="light" expand="block" [routerLink]="['/register']">Register</ion-button>
+          </ion-item>
+
+          <ion-item *ngIf="isLoggedIn">
+            <ion-icon name="person-circle" slot="start"></ion-icon>
+            <ion-button color="light" expand="block" [routerLink]="['/profile']">Profile</ion-button>
+          </ion-item>
+
+          <ion-item *ngIf="isLoggedIn">
+            <ion-icon name="person" slot="start"></ion-icon>
+            <ion-button color="light" expand="block" (click)="logout()">Logout</ion-button>
+          </ion-item>
+
+          <ion-item>
+            <ion-button name="log-out" [routerLink]="['/login-admin']">Admin</ion-button>
+          </ion-item>
+        </ion-list>
+      </ion-content>
+  </ion-menu>
+
+  <div class="ion-page" id="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title class="ion-text-center" [routerLink]="['/home']">Gerai Kita</ion-title>
+        <ion-buttons slot="end">
+          <ion-searchbar (click)="onSearch()"></ion-searchbar>
+          <ion-icon name="cart" size="large" [routerLink]="['/cart']"></ion-icon>
+          <ion-icon name="person" size="large" [routerLink]="['/profile']"></ion-icon>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content class="ion-padding">
+      <ion-router-outlet></ion-router-outlet>
+    </ion-content>
+  </div>
+</ion-app>
+
+<script>
+  const searchbar = document.querySelector('ion-searchbar');
+  const items = Array.from(document.querySelector('ion-list').children);
+
+  searchbar.addEventListener('ionInput', handleInput);
+
+  function handleInput(event) {
+    const query = event.target.value.toLowerCase();
+    requestAnimationFrame(() => {
+      items.forEach(item => {
+        const shouldShow = item.textContent.toLowerCase().indexOf(query) > -1;
+        item.style.display = shouldShow ? 'block' : 'none';
+      });
+    });
+  }
+</script>
