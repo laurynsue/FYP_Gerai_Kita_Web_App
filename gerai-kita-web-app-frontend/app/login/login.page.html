@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="dark" class="ion-text-center">
+    Login
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion=padding">
+  <ion-item>
+    <ion-input [(ngModel)]="email" placeholder="email" type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input [(ngModel)]="memberPW" placeholder="password" type="password" ></ion-input>
+  </ion-item>
+
+  <ion-button color="dark" expand="block" type="submit" (click)="login()">Login</ion-button>
+
+  <p class="ion-text-center" *ngIf="isLoading">
+    <ion-spinner></ion-spinner>
+  </p>
+
+  <p class="ion-text-center">Forgot Password?</p>
+  <p class="ion-text-center">Are you a seller? <strong routerLink="/loginstore">Please Login Here</strong></p>
+  <p class="ion-text-center">New Member? <strong routerLink="/register">Register Here</strong></p>
+</ion-content>
+
