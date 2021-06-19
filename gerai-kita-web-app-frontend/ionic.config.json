@@ -1,0 +1,7 @@
+{
+  "name": "gerai-kita-web-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
