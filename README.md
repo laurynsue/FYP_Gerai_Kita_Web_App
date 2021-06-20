@@ -1,4 +1,4 @@
-# User Guide & Installation Kit
+# Installation Kit
 
 ## 'Gerai Kita' Handicraft Art Market Progressive Web Application Using Ionic And Angular
 
