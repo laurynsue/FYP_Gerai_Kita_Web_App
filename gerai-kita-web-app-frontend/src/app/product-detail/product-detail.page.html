@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title color="dark" class="ion-text-center">Product Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <img src="https://images.unsplash.com/photo-1607006555987-49a12f7c0488?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80">
+      </ion-col>
+      <ion-col>
+        <h3><b>Homemade Soap</b></h3>
+        <p>RM: 10</p>
+        <ion-icon name="remove-circle" (click)="decrement()"></ion-icon>
+          {{currentNumber}}
+        <ion-icon name="add-circle" (click)="increment()"></ion-icon>
+        <h4>Total amount: {{totalAmount}}</h4>
+        <ion-button color="dark" [routerLink]="['/cart']">Add to Cart</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+  <h3><b>Details about Homemade Soap</b></h3>
+  <ion-item>
+    <p>This is homemade soap with natural ingredients.</p>
+  </ion-item>
+  
+</ion-content>
