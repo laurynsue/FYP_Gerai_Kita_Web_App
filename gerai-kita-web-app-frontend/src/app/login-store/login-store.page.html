@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar color="dark" class="ion-text-center">
+    Login Store
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion=padding">
+  <ion-item>
+    <ion-input [(ngModel)]="email" placeholder="email" type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input [(ngModel)]="password" placeholder="password" type="password" ></ion-input>
+  </ion-item>
+
+  <ion-button color="dark" expand="block" type="submit" routerLink="/dashboard-store">Login</ion-button>
+  <p class="ion-text-center">New Seller? <strong routerLink="/register-store">Register Here</strong></p>
+</ion-content>
+
