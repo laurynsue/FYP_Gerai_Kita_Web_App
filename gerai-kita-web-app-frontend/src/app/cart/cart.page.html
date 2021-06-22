@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title color="dark" class="ion-text-center">Cart</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item> <!--*ngFor="let product of Cart"-->
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-thumbnail>
+            <img src="https://images.unsplash.com/photo-1607006555987-49a12f7c0488?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80">
+          </ion-thumbnail>
+            <h3><b>Homemade Soap</b></h3>
+            <p>Quantity: 2</p>
+            <p>Amount (RM): 10</p>
+           <ion-button type="button">Edit</ion-button><!--(click)="onEdit(product.ProductID,product.id,product.Quantity)" -->
+          
+        </ion-col>
+
+        <ion-col> <!--*ngIf="!empty"-->
+          
+            <p>Your Total Amount (RM): 20 </p>
+            <ion-button type="button" color="warning">Checkout</ion-button><!--(click)="checkOut()"-->
+          
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+</ion-content>
