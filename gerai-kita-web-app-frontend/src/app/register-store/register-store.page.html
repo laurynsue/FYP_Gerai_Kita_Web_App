@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title color="dark" class="ion-text-center">Register Store</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <!--site user who is a seller, details-->
+  <ion-item>
+    <ion-input [(ngModel)]="storeName" placeholder="Store Name" type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input [(ngModel)]="storeAddress" placeholder="Store Address" type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input [(ngModel)]="email" placeholder="Email" type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input [(ngModel)]="password" placeholder="Password" type="text"></ion-input>
+  </ion-item>
+
+  <ion-button color="dark" expand="block" routerLink="/dashboard-store">Register</ion-button>
+</ion-content>
