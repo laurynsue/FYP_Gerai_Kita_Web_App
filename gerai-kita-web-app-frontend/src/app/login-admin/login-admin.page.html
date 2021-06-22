@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar color="dark" class="ion-text-center" size="large">Admin Login</ion-toolbar>
+</ion-header>
+
+<ion-content class="ion=padding">
+  <ion-item>
+    <ion-input [(ngModel)]="email" placeholder="email" type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input [(ngModel)]="memberPW" placeholder="password" type="password" ></ion-input>
+  </ion-item>
+
+  <ion-button color="dark" expand="block" type="submit" routerLink="/dashboard-admin">Login</ion-button>
+
+  <p class="ion-text-center" *ngIf="isLoading">
+    <ion-spinner></ion-spinner>
+  </p>
+</ion-content>
+
