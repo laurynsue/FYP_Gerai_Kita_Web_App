@@ -13,6 +13,7 @@ export class LoginPage {
 
   email=''
   memberPW=''
+  isLoading:boolean = false;
   
   constructor(
     private router: Router,
@@ -21,6 +22,8 @@ export class LoginPage {
 
   
   login(){
+    this.isLoading = true
+
     if(this.email.length == 0){
       alert('email field can not be empty')
     }else 
@@ -30,12 +33,12 @@ export class LoginPage {
       this.service.login(this.email,this.memberPW).subscribe((response)=>{
       
       console.log(response)
-      if(response['status']=='success'){
+      if(response['status'] =='success'){
         localStorage['login_status'] = '1'
         localStorage['email'] = response['data'][0].email
         localStorage['memberPW'] = response['data'][0].memberPW
         localStorage['flag'] = '0'
-        
+        this.isLoading = false
         this.router.navigate(['/home'])
         }else if(response['status']=='error'){
           alert('invaild email or password')
