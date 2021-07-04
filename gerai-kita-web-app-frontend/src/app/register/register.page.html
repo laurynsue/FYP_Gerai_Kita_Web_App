@@ -27,10 +27,10 @@
   </ion-item>
 
   <ion-item>
-    <ion-input [(ngModel)]="memberPW" placeholder="Password" type="text"></ion-input>
+    <ion-input [(ngModel)]="memberPW" placeholder="Password" type="password"></ion-input>
   </ion-item>
 
-  <ion-button color="dark" expand="block" routerLink="/login">Register</ion-button>
+  <ion-button color="dark" expand="block" (click)="register()">Register</ion-button>
 
   <p class="ion-text-center">Already become a Member? <strong routerLink="/login">Login Here</strong></p>
   <p class="ion-text-center">Are you a seller? <strong routerLink="/login-store">Login Here</strong></p>
