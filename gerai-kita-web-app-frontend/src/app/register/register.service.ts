@@ -8,14 +8,13 @@ import { HttpClient } from '@angular/common/http';
 
 export class RegisterService {
     http: HttpClient
-    url = 'http://localhost:4000/register'
+    url = 'http://localhost:4000/member/register'
 
      constructor(httpClient: HttpClient) {
         this.http = httpClient
      }
-
      
-    addUsers( 
+    addMembers( 
         username: string,
         memberName: string,
         memberAddress: string,
@@ -33,5 +32,4 @@ export class RegisterService {
         }
         return this.http.post(this.url, body)
     } 
-        
 }
