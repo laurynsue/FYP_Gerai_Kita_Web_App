@@ -40,7 +40,7 @@
 
           <ion-item *ngIf="isLoggedIn">
             <ion-icon name="person-circle" slot="start"></ion-icon>
-            <ion-button color="light" expand="block" [routerLink]="['/profile']">Profile</ion-button>
+            <ion-button color="light" expand="block" [routerLink]="['/member-profile']">Profile</ion-button>
           </ion-item>
 
           <ion-item *ngIf="isLoggedIn">
@@ -65,7 +65,7 @@
         <ion-buttons slot="end">
           <ion-searchbar (click)="onSearch()"></ion-searchbar>
           <ion-icon name="cart" size="large" [routerLink]="['/cart']"></ion-icon>
-          <ion-icon name="person" size="large" [routerLink]="['/profile']"></ion-icon>
+          <ion-icon name="person" size="large" [routerLink]="['/member-profile']"></ion-icon>
         </ion-buttons>
       </ion-toolbar>
     </ion-header>
