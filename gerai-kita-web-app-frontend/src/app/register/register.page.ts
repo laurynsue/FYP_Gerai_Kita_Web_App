@@ -45,7 +45,7 @@ export class RegisterPage implements OnInit {
         alert('password is required')
     }
     else{
-      this.service.addUsers(
+      this.service.addMembers(
       this.username,
       this.memberName,
       this.address,
