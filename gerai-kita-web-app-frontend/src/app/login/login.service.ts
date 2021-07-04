@@ -8,8 +8,7 @@ import { HttpClient } from '@angular/common/http';
 
 export class LoginService {
     http: HttpClient
-    url = 'http://localhost:4000/login'   //express port 4000
-
+    url = 'http://localhost:4000/member/login'   //express port 4000
 
     constructor(private httpClient: HttpClient) {
         this.http = httpClient
@@ -22,6 +21,4 @@ export class LoginService {
         }
         return this.http.post(this.url,body)
     }
-
 }
-
